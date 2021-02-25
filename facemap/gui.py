@@ -634,7 +634,7 @@ class MainW(QtGui.QMainWindow):
         proc = {'Ly':self.Ly, 'Lx':self.Lx, 'sy': self.sy, 'sx': self.sx, 'LY':self.LY, 'LX':self.LX,
                 'sbin': ops['sbin'], 'fullSVD': ops['fullSVD'], 'rois': rois,
                 'save_mat': ops['save_mat'], 'save_path': ops['save_path'],
-                'filenames': self.filenames, 'iframes': self.iframes}
+                'filenames': self.filenames} # 'iframes': self.iframes}
         savename = process.save(proc, savepath=savepath)
         self.batchlist.append(savename)
         basename,filename = os.path.split(savename)

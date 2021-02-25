@@ -352,14 +352,16 @@ def save(proc, savepath=None):
     # save ROIs and traces
     basename, filename = os.path.split(proc['filenames'][0][0])
     filename, ext = os.path.splitext(filename)
-    if savepath is not None:
-        basename = savepath
+    # if savepath is not None and (len(savepath.strip())): 
+    #     basename = savepath
+    print('THis is an updated version')
     savename = os.path.join(basename, ("%s_proc.npy"%filename))
     print(savename)
     np.save(savename, proc)
+    proc['save_path'] = savename
     if proc['save_mat']:
-        if 'save_path' in proc and proc['save_path'] is None:
-            proc['save_path'] = ''
+        #if 'save_path' in proc and proc['save_path'] is None:
+        #    proc['save_path'] = ''
 
         d2 = {}
         for k in proc.keys():
